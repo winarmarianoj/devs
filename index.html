@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -56,12 +56,12 @@
     <!--Fin del Header-->
 
     <!--Comienzo del Main-->
-    <main>
+    <main class="socialweb">
         <div class="container-fluid">
             <div class="row">                    
 
                 <!--INICIO COLUMNA 1-->
-                <section id="columna1" class="col-2 offset-fixed f-left pt-2">
+                <section class="columna1 col-2 offset-fixed f-left pt-2">
 
                     <!--INICIO LINKS-->
                     <div id="fondoLinks" class="row col-lg-12 side-left">
@@ -169,7 +169,7 @@
                 <!--FIN COLUMNA 1-->
 
                 <!--INICIA COLUMNA 2-->
-                <section id="columna2" class="col-7 offset-fixed my-5 pt-2"> <!--class="col-lg-7 offset-lg-3"-->                    
+                <section class="columna2 col-7 offset-fixed my-5 pt-2"> <!--class="col-lg-7 offset-lg-3"-->                    
 
                     <!--INICIO CARROUSEL EVENTOS DE TECNOLOGIA-->
                     <div class="carousel-fotos carousel slide w-100 pb-4" data-ride="carousel">
@@ -210,15 +210,18 @@
                             <!--INICIA  TEXT AREA 1-->
                             <textarea class="form-control border-0" id="Textarea1" rows="4"
                                     placeholder="¿Que estas pensando?"></textarea> 
+                            <hr>
+                            <input type="file" id="fileFoto"/>                            
+                            <hr>
                             <!--FIN TEXT AREA 1 -->
 
                             <!--INICIO BOTONES DE ELECCION / Mas colores info, light, dark, link-->
-                            <div class="card-footer p-2">
+                            <div class="botons card-footer p-2">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <input type="button" name="Links" id="btnLinks" value="Links" onclick="formLinks(btnLinks)" class="btn btn-primary"/>
                                     <input type="button" name="History" id="btnHistory" value="History" onclick="formHistory(btnHistory)" class="btn btn-secondary"/>
                                     <input type="button" name="Post" id="btnPosted" value="Post" onclick="formPosted(btnPosted)" class="btn btn-success"/>
-                                    <input type="button" name="Photos" id="btnPhotos" value="Photos" onclick="formPhotos(btnPhotos)" class="btn btn-danger"/>
+                                    <input type="button" name="Photos" id="btnPhotos" value="Photos" onclick="formPhotos(btnPhotos)" class="btn btn-danger"/> 
                                     <input type="button" name="Message" id="btnMessage" value="Message" onclick="formMessage(btnMessage)" class="btn btn-warning"/>                                      
                                 </div>
                             </div>
@@ -264,7 +267,7 @@
                 <!--FIN COLUMNA 2-->
 
                 <!--INICIA COLUMNA 3-->
-                <section id="columna3" class="col-3 offset-fixed f-right my-4 pt-4">
+                <section class="columna3 col-3 offset-fixed f-right my-4 pt-4">
 
                     <!--INICIO PUBLICIDADES-->
                     <div class="publicidades">
@@ -347,22 +350,15 @@
         <!--FIN CONTAINER FLUID PRIMERO DEL MAIN--> 
     </main>
     <!--Fin del Main-->
-
-    <!--Comienzo del Footer-->
-    <footer>        
-    </footer>
-    <!--Fin del Footer-->
-
-    <!--Links a archivos JS -->
-
+    
+    <script src="js/moreClass.js"></script>
+    <script src="js/ui.js"></script>
     <script src="js/links.js"></script>
     <script src="js/history.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sweetalert2.all.min.js"></script>
-    <script src="js/buttonAnswers.js"></script>
-
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

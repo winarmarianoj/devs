@@ -1,3 +1,25 @@
+/*
+function formLinks(btnLinks) {
+	alert('hola soy Links')
+}
+*/
+function formHistory(btnHistory) {
+	alert('hola soy History')
+}
+/*
+function formPosted(btnPosted) {
+	alert('hola soy Post')
+}
+*/
+function formPhotos(btnPhotos) {
+	alert('hola soy Photos')
+}
+
+function formMessage(btnMessage) {
+	alert('hola soy Message')
+}
+
+
 class UI {
 	addLinks(link) {
 		const linksList = document.getElementById('links-list');

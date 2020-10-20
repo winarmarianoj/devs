@@ -99,15 +99,7 @@ body{
 #fondoLink{
     height: calc(50vh - 8rem);
 }
-#columna1{
-    margin-right: 0%;
-}
-#column2{
-    margin-right: 0%;
-}
-#columna3{
-    margin-right: 0%;
-}
+
 #titleLinks{
     font-family: Verdana;
     font-size: 2rem;
@@ -191,3 +183,52 @@ div.imagen img:hover{
     font-size: 18px;
     color: black;
 }
+
+.socialweb{
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;   
+    background-attachment: fixed;
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: repeat;  
+}
+#btnDelete{
+    border-radius: 100%;
+}
+
+
+/* MEDIAS QUERIES*/
+
+@media (min-width: 450px) {
+    .columna1, .columna2, .columna3, .botons{
+      max-width: 380px;
+    }    
+  }
+
+@media (min-width: 600px) {
+    .columna1, .columna2, .columna3, .botons{
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .columna1, .columna2, .columna3, .botons{
+      max-width: 720px;
+    }
+  }  
+  
+  @media (min-width: 992px) {
+    .columna1, .columna2, .columna3, .botons{
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .columna1, .columna2, .columna3, .botons{
+      max-width: 100%;
+    }
+  }
