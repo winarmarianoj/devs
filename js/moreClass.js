@@ -6,3 +6,7 @@ class ElementsFotos {
     dataHistory;
     dataPostPhotos
 }
+class Logins{
+	email;
+	pass
+}

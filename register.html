@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>CONTACT FORM</title>
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="/css/contact.css">
+        <link rel="stylesheet" href="/js/validation.js">    
+    </head>
+
+    <body class="contacto">  <!--class="bg-light"-->
+
+        <header>
+        </header>        
+
+        <!--Inicio Main-->
+        <main>
+
+            <section class="container-fluid">
+
+                <!--Inicia Formulario de Contacto-->
+                <section>                    
+                    <div class="py-3 pt-2 text-muted text-center text-small">
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><a href="#"><img src="/img/logo.png" alt=""></a></li>
+                            <li class="list-inline-item"><a href="#"></a><p id="titleContacts">Formulario de Registro Usuarios</p></li>
+                        </ul>
+                    </div>
+            
+                    <div class="row justify-content-center" >            
+                                            
+                        <div class="col-md-8 order-md-1">                        
+        
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="firstName">Nombre</label>
+                                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                            <div class="invalid-feedback">
+                                                    El nombre es requerido y obligatorio.
+                                            </div>
+                                        </div>
+            
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="lastName">Apellido</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                            <div class="invalid-feedback">
+                                                    El segundo nombre es requerido y obligatorio.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="phone">Número de Celular</label>
+                                            <input type="phone" class="form-control" id="phone" placeholder="054-9-11-2222-3333"  value="" required>
+                                            <div class="invalid-feedback">
+                                                Por favor ingresar un número de celular válido según tu zona.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="email">Correo Electrónico</label>
+                                            <input type="email" class="form-control" id="email" placeholder="tu-correo@example.com"  value="" required>
+                                            <div class="invalid-feedback">
+                                                Por favor ingresar una casilla de email válida para actualizaciones y envíos.
+                                            </div>
+                                        </div>                                        
+                                
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="address">Domicilio Actual</label>
+                                            <input type="text" class="form-control" id="address" placeholder="Calle y número válido" required>
+                                            <div class="invalid-feedback">
+                                                Por favor ingresar tu dirección válida para envíos.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="address">Contraseña para su Usuario</label>
+                                            <input type="text" class="form-control" id="address" placeholder="Calle y número válido">
+                                            <div class="invalid-feedback">
+                                                Por favor ingresar tu dirección válida para envíos.
+                                            </div>
+                                        </div>
+
+                                </div>                        
+                                
+                        
+                                <div class="row">
+                                    <div class="col-md-5 mb-5">
+                                        <label id="labels" for="country">País</label>
+                                        <select class="custom-select d-block w-100" id="country" required>
+                                            <option value="">Escoger...</option>
+                                            <option>Argentina</option>
+                                            <option>Uruguay</option>
+                                            <option>Brasil</option>
+                                            <option>Paraguay</option>
+                                            <option>Bolivia</option>
+                                            <option>Chile</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor seleccionar un país válido.
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-md-4 mb-5">
+                                        <label id="labels" for="state">Estado o Provincia</label>
+                                        <select class="custom-select d-block w-100" id="state" required>
+                                            <option value="">Escoger...</option>
+                                            <option>Buenos Aires</option>
+                                            <option>Catamarca</option>
+                                            <option>Chaco</option>
+                                            <option>Chubut</option>
+                                            <option>Córdoba</option>
+                                            <option>Corrientes</option>
+                                            <option>Entre Ríos</option>
+                                            <option>Formosa</option>
+                                            <option>Jujuy</option>
+                                            <option>La Pampa</option>
+                                            <option>La Rioja</option>
+                                            <option>Mendoza</option>
+                                            <option>Misiones</option>
+                                            <option>Neuquén</option>
+                                            <option>Río Negro</option>
+                                            <option>Salta</option>
+                                            <option>San Juan</option>
+                                            <option>San Luis</option>
+                                            <option>Santa Cruz</option>
+                                            <option>Santa Fé</option>
+                                            <option>Santiago del Estero</option>
+                                            <option>Tierra del Fuego</option>
+                                            <option>Tucumán</option>                                
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor selecciona un Estado o Provincia válido.
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-md-3 mb-5">
+                                        <label id="labels" for="zip">Código Postal</label>
+                                        <input type="text" class="form-control" id="zip" placeholder="" required>
+                                        <div class="invalid-feedback">
+                                            Código Postal requerido.
+                                        </div>
+                                    </div>
+
+                                </div>                               
+
+                                <ul class="list-inline text-center mb-5">
+                                    <li class="list-inline-item"><button class="btn btn-primary btn-lg btn-block" type="submit">Continuar y Grabar</button></li>
+                                    <li class="list-inline-item"></li>
+                                    <li class="list-inline-item"></li>
+                                    <li class="list-inline-item"><a href="/index.html" class="btn btn-primary btn-lg btn-block">Return to Menú</a></li>
+                                </ul>
+
+                            </form>
+                        </div>   
+                        
+                    </div>
+
+                    <!--Inicio Footer-->
+                    <footer class="pt-3 text-muted text-center text-small">                        
+                        <p class="mb-1">&copy; 2020 DEVS</p>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#">Nosotros</a></li>
+                            <li class="list-inline-item"><a href="#">Términos</a></li>
+                            <li class="list-inline-item"><a href="#">Soporte</a></li>
+                            <li class="list-inline-item"><a href="#"></a></li>
+                            <li class="list-inline-item"><img src="/logos/facebook.png" alt=""></li>
+                            <li class="list-inline-item"><img src="/logos/instagram.png" alt=""></li>
+                            <li class="list-inline-item"><img src="/logos/linkedin.png" alt=""></li>
+                            <li class="list-inline-item"><img src="/logos/twiter.png" alt=""></li>
+                            <li class="list-inline-item"><img src="/logos/youtube.png" alt=""></li> 
+                        </ul>
+                        <br>
+            
+                    </footer>
+                    <!--Fin Footer-->
+
+                </section> 
+                <!--Finaliza Formulario de Contacto-->
+
+            </section>
+
+        </main>
+        <!--Fin Main-->
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="form-validation.js"></script>
+    </body>
+
+</html>

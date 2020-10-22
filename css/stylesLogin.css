@@ -1,0 +1,63 @@
+.body{    
+  background-image: url(../img/fondo.jpeg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: 2px 2px 10px #999;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+.login-dark {
+    /*background: linear-gradient(145deg, #575b5d, #252b2d);*/
+    background: black;
+}
+.login-card-purple {
+    background: linear-gradient(145deg, #673AB7, #9C27B0);
+}
+.login-blue {
+    background: linear-gradient(145deg, #2196F3, #3F51B5);
+}
+.login-purple-pink {
+    background: linear-gradient(145deg, #3F51B5, #E91E63);
+}
+.loguer{    
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 500px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.g-recaptcha{
+  padding: 10% 20%;
+}
+
+@media (min-width: 576px) {
+    .loguer {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .loguer {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .loguer {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .loguer {
+      max-width: 1140px;
+    }
+  }
+  .title{
+    font-size: 50px;    
+  }

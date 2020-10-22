@@ -1,7 +1,7 @@
 const ui1 = new UI();
 const publicaciones = new ElementsFotos();
-var idFotos = 0;
-var image = new Image();
+var photosLists = [];
+localStorage.clear();
 
 // PODRIA SER UNA FOTO, FOTO Y TEXTO, O TEXTO SOLO
 function formHistory(btnHistory) {
@@ -16,7 +16,7 @@ function postPhotos(num) {
 	if (storageAvailable('localStorage')) {
 		taked(num);
 	}
-	else {
+	else {		
 		ui1.noStorage();
 	}
 }
@@ -49,8 +49,7 @@ function storageAvailable(type) {
 function taked(numero) {	
 	publicaciones.dataHistory = document.getElementById("Textarea1").value;
 	publicaciones.dataPostPhotos = document.getElementById("Textarea1").value;
-	Textarea1.value = "";
-	idFotos=1
+	Textarea1.value = "";	
 
 	if (publicaciones.dataHistory === "" || publicaciones.dataPostPhotos === ""){
 		ui1.danger();
@@ -58,11 +57,12 @@ function taked(numero) {
 
 	switch (numero) {
 		case 1:
-			ui1.addHistoryPhotos(publicaciones.dataHistory, idFotos);
+			ui1.addHistoryPhotos(publicaciones.dataHistory);
 			ui1.correct();
 			break;
 		case 2:
-			addPostPhotos(publicaciones.dataPostPhotos, idFotos);
+			createPostPhotos(publicaciones.dataPostPhotos);
+			/*ui1.addPostPhotos(publicaciones.dataPostPhotos);*/
 			ui1.correct();
 			break;
 		default:
@@ -71,55 +71,56 @@ function taked(numero) {
 	}
 };
 
-function addPostPhotos(dato) {
-	const postLists = document.getElementById('publicacionesPost');
-	const element = document.createElement('div');
-
-	element.innerHTML = `
-			<div class="card my-3">
-						<div class="card userName d-flex justify-content-center">
-							<p><b>Nombre del Usuario</b></p>
-						</div>
-						<div class="card-img">							
-							<img id="idFotos" src="" alt="Preview">
-						</div>
-						<div class="card my-3 card-body pt-0 pb-2">
-							${dato}
-                        </div>
-						<div class="card-footer bg-white border-0 p-0">                                
-                            <div class="d-flex justify-content-between align-items-center my-1">
-                                <div class="col">
-                                    <button id="meGusta" type="button" class="btn btn-fbook btn-block btn-sm"> <i class="fa fa-thumbs-up"
-										aria-hidden="true"></i> Me gusta
-									</button>
-                                </div>
-                                <div class="col">
-                                    <button id="comentar" type="button" class="btn btn-fbook btn-block btn-sm"><i class="fa fa-comment"
-												aria-hidden="true"></i> Comentar
-									</button>
-                                </div>
-                                <div class="col">
-                                    <button id="compartir" type="button" class="btn btn-fbook btn-block btn-sm"><i class="fa fa-share"
-												aria-hidden="true"></i> Compartir
-									</button>
-								</div>
-								<div class="col">
-									<a href="#" class="btn btn-danger" id="btnDelete" name="delete">X</a>
-								</div>
-                            </div>
-                        </div>				
-			</div>
-		`;
-	postLists.appendChild(element);
-	addFotoDiv();
+function createPostPhotos(dato){
+	const recentImageDataUrl = localStorage.getItem("recent-image");
+	let postFoto = {
+		texto: dato,
+		img: recentImageDataUrl
+	}
+	photosLists.push(postFoto)
+	localStoragePhotosList(photosLists)
+	ui1.addPostPhotos(dato)
+	
+	if (recentImageDataUrl) {
+		document.querySelector("#image-preview").setAttribute("src", recentImageDataUrl);
+	}
+	
 }
 
-function addFotoDiv(){
-								
-	const recentImageDataUrl = localStorage.getItem("recent-image");
+function getPhotosList() {
+	var storedList = localStorage.getItem('elementList');
+	if (storedList == null) {
+		photosLists = [];
+	} else {
+		photosLists = JSON.parse(storedList);
+	}
+	return photosLists;
+}
 
-	if (recentImageDataUrl) {
-		document.querySelector("#idFotos").setAttribute("src", recentImageDataUrl);
+function localStoragePhotosList(photosLists) {
+	localStorage.setItem('elementList', JSON.stringify(photosLists));
+}
+
+
+
+
+/*
+function addObject(element) {
+
+	let idFotos = parseInt(localStorage.getItem("idsFot"));
+	console.log(idFotos)
+
+	localStorage.setItem("idFotos", element);
+	localStorage.setItem("idsFot", idFotos);
+}
+*/
+
+function showImages(num) {
+	for (let i = 0; i < localStorage.length; i++) {
+		if (i === num) {
+			let res = localStorage.getItem(localStorage.key(i))
+			image.src = res;
+		}
 	}
 }
 
@@ -140,38 +141,16 @@ document.addEventListener("DOMContentLoaded", () => {
 // funcion que al presionar eliminar link lo destruye
 document.getElementById('publicacionesPost').addEventListener('click', function (e) {
 	ui1.deletePost(e.target);
-	ui1.correct();
+	ui1.correct();	
 	e.preventDefault();
 });
 
 // funcion que capta la img y la guarda en localStorage
 document.querySelector('#fileFoto').addEventListener('change', (e)=>{	
 	const reader = new FileReader();	
-
 	reader.addEventListener("load", () => {
-		if (idFotos==0){
-			localStorage.setItem("recent-image", reader.result); /*recent-image*/	
-			idFotos++;
-			localStorage.setItem("idsFot", idFotos);
-		}else{
-			idFotos = parseInt(localStorage.getItem("idsFot"));
-			localStorage.removeItem("idFotos");
-			console.log(idFotos)
-			idFotos++;
-			localStorage.setItem("recent-image", reader.result); /*recent-image*/
-			localStorage.setItem("idsFot", idFotos);
-		}
-		
+		localStorage.setItem("recent-image", reader.result); 
 	});
-
 	reader.readAsDataURL(e.target.files[0]);
 });	
 
-function showImages(num){
-	for (let i=0; i<localStorage.length; i++){
-		if (i===num){
-			let res = localStorage.getItem(localStorage.key(i))
-			image.src = res;
-		}		
-	}
-}

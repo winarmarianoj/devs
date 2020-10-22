@@ -51,6 +51,63 @@ class UI {
 
     addHistoryPhotos(dato) { }
 
+    addPostPhotos(dato) {
+        const postLists = document.getElementById('publicacionesPost');
+        var list = getPhotosList();
+        const postPhoto = document.createElement('div');
+
+        for (let i = 0; i < list.length; i++){
+            if(dato === list[i].texto){
+                var divs = list[i]                
+                postPhoto.innerHTML = `
+                    <div class="card my-3">
+                                <div class="card userName d-flex justify-content-center">
+                                    <p><b>Nombre del Usuario</b></p>
+                                </div>
+                                <div class="card-img">							
+                                    <img id="image-preview" src="" alt="Preview">
+                                </div>
+                                <div class="card my-3 card-body pt-0 pb-2">
+                                    ${dato}
+                                </div>
+                                <div class="card-footer bg-white border-0 p-0">                                
+                                    <div class="d-flex justify-content-between align-items-center my-1">
+                                        <div class="col">
+                                            <button id="meGusta" type="button" class="btn btn-fbook btn-block btn-sm"> <i class="fa fa-thumbs-up"
+                                                aria-hidden="true"></i> Me gusta
+                                            </button>
+                                        </div>
+                                        <div class="col">
+                                            <button id="comentar" type="button" class="btn btn-fbook btn-block btn-sm"><i class="fa fa-comment"
+                                                        aria-hidden="true"></i> Comentar
+                                            </button>
+                                        </div>
+                                        <div class="col">
+                                            <button id="compartir" type="button" class="btn btn-fbook btn-block btn-sm"><i class="fa fa-share"
+                                                        aria-hidden="true"></i> Compartir
+                                            </button>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#" class="btn btn-danger" id="btnDelete" name="delete">X</a>
+                                        </div>
+                                    </div>
+                                </div>				
+                    </div>
+                `;  
+                postLists.appendChild(postPhoto); 
+                
+            }  
+            /* 
+            const recentImageDataUrl = localStorage.getItem("recent-image");
+            console.log(recentImageDataUrl)
+            console.log(divs.texto)
+            console.log(divs.img)
+            if (recentImageDataUrl) {
+                document.querySelector("#i").setAttribute("src", recentImageDataUrl);
+            } 
+            */             
+        }                           
+    }
 
     deleteLinks(element) {
         if (element.name === "delete") {

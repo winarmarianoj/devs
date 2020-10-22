@@ -2,10 +2,10 @@ document.querySelector('#btnSaveFriend').addEventListener('click', saveFriend);
 drawFriendsTable();
 
 function saveFriend(){
-	var sId = document.querySelector('#txtId').value,
-	var sName = document.querySelector('#name').value,
-	var sLastName = document.querySelector('#lastName').value,
-	var sEmail = document.querySelector('#email').value,
+	var sId = document.querySelector('#txtId').value
+	var sName = document.querySelector('#name').value
+	var sLastName = document.querySelector('#lastName').value
+	var sEmail = document.querySelector('#email').value
 
 	addFriend(sId,sName,sLastName,sEmail);
 	drawFriendsTable();

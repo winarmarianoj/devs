@@ -7,13 +7,14 @@ function addFriend(pid, pname, plastName, pemail){
 		lastName: plastName,
 		email: pemail
 	};
+	console.log(newFriend)
 	friendList.push(newFriend);
 	localStorageFriendList(friendList);
 }
 
 function getFriendList(){
 	var storedList = localStorage.getItem('localFriendList');
-	if ( storedList == null){
+	if(storedList == null){
 		friendList = [];
 	}else{
 		friendList = JSON.parse(storedList);
