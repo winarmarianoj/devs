@@ -1,5 +1,3 @@
-const ui1 = new UI();
-const publicaciones = new ElementsFotos();
 var photosLists = [];
 localStorage.clear();
 
@@ -17,10 +15,9 @@ function postPhotos(num) {
 		taked(num);
 	}
 	else {		
-		ui1.noStorage();
+		ui.noStorage();
 	}
 }
-
 function storageAvailable(type) {
 	try {
 		var storage = window[type],
@@ -47,54 +44,58 @@ function storageAvailable(type) {
 
 // funcion que realiza de acuerdo al tipo de publicacion que debe hacer
 function taked(numero) {	
-	publicaciones.dataHistory = document.getElementById("Textarea1").value;
-	publicaciones.dataPostPhotos = document.getElementById("Textarea1").value;
+	var dataHistory = document.getElementById("Textarea1").value;
+	var dataPostPhotos = document.getElementById("Textarea1").value;
 	Textarea1.value = "";	
 
-	if (publicaciones.dataHistory === "" || publicaciones.dataPostPhotos === ""){
-		ui1.danger();
+	if (dataHistory === "" || dataPostPhotos === ""){
+		ui.danger();
 	}
 
 	switch (numero) {
 		case 1:
-			ui1.addHistoryPhotos(publicaciones.dataHistory);
-			ui1.correct();
+			ui.addHistoryPhotos(dataHistory);
+			ui.correct();
 			break;
 		case 2:
-			createPostPhotos(publicaciones.dataPostPhotos);
+			createPostPhotos(dataPostPhotos);
 			/*ui1.addPostPhotos(publicaciones.dataPostPhotos);*/
-			ui1.correct();
+			ui.correct();
 			break;
 		default:
-			ui1.danger();
+			ui.danger();
 			break;
 	}
 };
 
 function createPostPhotos(dato){
-	const recentImageDataUrl = localStorage.getItem("recent-image");
+	const recentImageDataUrl = localStorage.getItem("recent-image");	
 	let postFoto = {
+		name: "Mariano",
 		texto: dato,
 		img: recentImageDataUrl
 	}
 	photosLists.push(postFoto)
 	localStoragePhotosList(photosLists)
-	ui1.addPostPhotos(dato)
+	ui.addPostPhotos(dato)
 	
+	/*
 	if (recentImageDataUrl) {
 		document.querySelector("#image-preview").setAttribute("src", recentImageDataUrl);
 	}
+	*/
 	
 }
 
 function getPhotosList() {
 	var storedList = localStorage.getItem('elementList');
+	var listPhotos = [];
 	if (storedList == null) {
-		photosLists = [];
+		listPhotos = [];
 	} else {
-		photosLists = JSON.parse(storedList);
+		listPhotos = JSON.parse(storedList);
 	}
-	return photosLists;
+	return listPhotos;
 }
 
 function localStoragePhotosList(photosLists) {
@@ -140,8 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // funcion que al presionar eliminar link lo destruye
 document.getElementById('publicacionesPost').addEventListener('click', function (e) {
-	ui1.deletePost(e.target);
-	ui1.correct();	
+	ui.deletePost(e.target);
+	ui.correct();	
 	e.preventDefault();
 });
 

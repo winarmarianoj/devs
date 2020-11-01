@@ -19,7 +19,7 @@
                 <!--TITLE FORM-->
                 <div class="row d-flex justify-content-center align-items-center pb-4 ">
                     <img src="img/logo.png" alt="">
-                    <p class="title text-white">Sign In</p>                    
+                    <p class="title text-white">Sign Up</p>                    
                 </div>
 
                 <!--INICIO DEL FORMULARIO-->
@@ -27,23 +27,21 @@
                     <div class="form-group">
                         <input type="email" id="email" name="email"
                             class="form-control form-control-sm bg-light" 
-                            placeholder="Email Id">
+                            placeholder="Email Id" required="">
                     </div>
 
                     <div class="form-group">
                         <input type="password" id="password" name="password"
                             class="form-control form-control-sm bg-light" 
-                            placeholder="Password">
+                            placeholder="Password" required="">
                     </div>
 
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="rememberCheckBox">
                         <label class="form-check-label text-light" for="rememberCheckBox">Remember me?</label>
                     </div>
-
-                    <button type="submit" class="btn btn-sm btn-light col">
-                        Login
-                    </button>
+                    
+                    <input type="button" name="Login" id="btnLogin" value="Login" onclick="formLogin(btnLogin)" class="btn btn-sm btn-light col"/>
 
                     <div class="text-center mt-2">
                         <a href="forgot.html" class="text-warning">Forgot Password?</a>
@@ -75,11 +73,11 @@
                     <li class="list-inline-item"><a href="#">Términos</a></li>
                     <li class="list-inline-item"><a href="#">Soporte</a></li>
                     <li class="list-inline-item"><a href="#"></a></li>
-                    <li class="list-inline-item"><img src="/logos/facebook.png" alt=""></li>
-                    <li class="list-inline-item"><img src="/logos/instagram.png" alt=""></li>
-                    <li class="list-inline-item"><img src="/logos/linkedin.png" alt=""></li>
-                    <li class="list-inline-item"><img src="/logos/twiter.png" alt=""></li>
-                    <li class="list-inline-item"><img src="/logos/youtube.png" alt=""></li> 
+                    <li class="list-inline-item"><img src="logos/facebook.png" alt=""></li>
+                    <li class="list-inline-item"><img src="logos/instagram.png" alt=""></li>
+                    <li class="list-inline-item"><img src="logos/linkedin.png" alt=""></li>
+                    <li class="list-inline-item"><img src="logos/twiter.png" alt=""></li>
+                    <li class="list-inline-item"><img src="logos/youtube.png" alt=""></li> 
                 </ul>
                 <br>
     
@@ -93,8 +91,13 @@
     <footer></footer>
 
     <script src="js/login.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
 </body>
 </html>

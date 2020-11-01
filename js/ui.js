@@ -47,28 +47,30 @@ class UI {
 			</div>
         `;
         postLists.appendChild(element);
-    }
-
-    addHistoryPhotos(dato) { }
+    }    
 
     addPostPhotos(dato) {
         const postLists = document.getElementById('publicacionesPost');
         var list = getPhotosList();
         const postPhoto = document.createElement('div');
-
+        /*<img id="image-preview" src="" alt="Preview">*/
+        
         for (let i = 0; i < list.length; i++){
-            if(dato === list[i].texto){
-                var divs = list[i]                
+            if(dato == list[i].texto){
+                var imgs = list[i];
+                var newImage = new Image();
+                newImage.src = imgs.img;
+                newImage.with = newImage.height = "120";
                 postPhoto.innerHTML = `
                     <div class="card my-3">
                                 <div class="card userName d-flex justify-content-center">
-                                    <p><b>Nombre del Usuario</b></p>
+                                    <p><b>${imgs.name}</b></p>
                                 </div>
                                 <div class="card-img">							
-                                    <img id="image-preview" src="" alt="Preview">
+                                    <img id="image-preview" src="${newImage.src}" alt="Preview">                            
                                 </div>
                                 <div class="card my-3 card-body pt-0 pb-2">
-                                    ${dato}
+                                    ${imgs.texto}
                                 </div>
                                 <div class="card-footer bg-white border-0 p-0">                                
                                     <div class="d-flex justify-content-between align-items-center my-1">
@@ -140,8 +142,16 @@ class UI {
         Swal.fire({
             type: 'error',
             title: 'Error',
-            text: '¡Algo salió mal! Debes completar el campo',
+            text: '¡Algo salió mal! Debes completar nuevamente',
         });
+    }
+    
+    invalidAdd(text) {
+        Swal.fire({
+            type: 'error',
+            title: 'Error',
+            text: text,
+        });   
     }
 
     correct() {
@@ -159,4 +169,14 @@ class UI {
             text: '¡No puedes utilizar Local Storage para almacenar imágenes :(',
         });
     }
+
+    withImg() {
+        Swal.fire({
+            imageUrl: '../img/logo.png',
+            imageHeight: 412,
+            imageAlt: 'A tall image',
+            title: 'Welcome',
+        });
+    }
 }
+const ui = new UI();

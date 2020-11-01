@@ -1,189 +1,179 @@
+const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+const passRegex = /^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ]/;
+const namesRegex = /^([a-zA-Z])+$/;
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* REVISA PASS  regex = /^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ]/; */
-
-
-
-/*
-const data = new FormData(document.getElementById(formLogin));
-fetch('../post.php', {
-	method: 'POST',
-	body: data
- })
- .then(function(response) {
-	if(response.ok) {
-		return response.text()
-	} else {
-		throw "Error en la llamada Ajax";
-	}
- 
- })
- .then(function(texto) {
-	console.log(texto);
- })
- .catch(function(err) {
-	console.log(err);
- });
-
-*/
-
-//DOM
-
-/*
-FUNCION DEL PDF JAVASCRIPT QUE NO FUNCIONA LA API NOSE 
-document.getElementById('formLogin').addEventListener('submit', function(e) {
-	e.preventDefault();
-	// ahora a recuperar los datos ingresados en el form	
-	let logins = new Logins();
-	logins.email = document.getElementById('email').value;
-	logins.pass = document.getElementById('password').value;
-
-	const usersPromise = fetch('/api', {
-		method : 'POST',
-		body : JSON.stringify(logins)
-	}).then(response => {
-		if (!response.ok){
-			throw new Error("no funciona response con Api.Server");
-		}
-		return response.json();
-	}).then(responseData => {
-		return responseData.users;
-	});
-
-	usersPromise.then(users => {
-		console.log("Know users: ", users);
-	}, error => {
-		console.error("Faileeeeeeeeeeeeeeeeeeeed", error);
-	});
-
-}); //login o register
-
-*/
-
-/*
-function ajax(file, params, callback) {
-	var url = file + '?';
-	// loop through object and assemble the url
-	var notFirst = false;
-	for (var key in params) {
-	if (params.hasOwnProperty(key)) {
-	url += (notFirst ? '&' : '') + key + "=" + params[key];
-	}
-	notFirst = true;
-	}
-	// create a AJAX call with url as parameter
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-	callback(xmlhttp.responseText);
-	}
-	};
-	xmlhttp.open('GET', url, true);
-	xmlhttp.send();
-}
-
-
-*/
-
-	
-
-
-
-/*
-	var jsonLogin = JSON.stringify(logins);
-	
-	
-	
-	
-	
-	// convierto objeto en tipo Json	
-	ajax(jsonLogin);						// envio a funcion
-
-	e.preventDefault(); //para evitar el refresco de pantalla
-	
-}
-*/
-
-/*
-document.getElementById('formLogin').addEventListener('submit', function(e) {
-	let logins = new Logins();
-	logins.email = document.getElementById('email').value;
-	logins.pass = document.getElementById('password').value;
-	let logJson = JSON.stringify(logins);
-	let childWindow = window.open("https://jsfiddle.net/ozzan/wmxf9fs2/show", "_blank");
-
-	if (!logJson || !logJson.length) return;
-	childWindow.postMessage(JSON.stringify({
-		logJson: logJson,
-		time: new Date()
-	}), "https://jsfiddle.net/");
-	document.getElementById("response").innerHTML = t;
-	console.log(logJson);
-});
-
-*/
-
-/*
-function ajax(jsonLogin){
-	const http = new XMLHttpRequest();
-	const url = 'http://127.0.0.1:5500/login.html';  // aca deberia ir la url de java
-
-	http.onreadystatechange = function(){
-
-		if (this.readyState === 4 && this.status === 200){
-			console.log(jsonLogin);
-		}				
-	}
-	http.open("GET", url, true);
-	http.send();
+// funcion que me trae del Login HTML 
+function formLogin(btnLogin) {		
+	log();
 };
-*/
 
-// OTRA FUNCION QUE DEBERIA FUNCIONAR
+// funcion que me trae del Forgot HTML
+function formForgot(btnForgot) {
+	forgoted();
+};
 
-/*
-function sendMessage(message) {
-    if (!message || !message.length) return;
-    childWindow.postMessage(JSON.stringify({     // EN EL EJEMPLO ES UNA PAGINA EN BLANCO
-        message: message,
-        time: new Date()
-    }), "https://jsfiddle.net/");
-    console.log("sent");
+// funcion que me trae del Register HTML
+function formRegister(btnRegister) {
+	registed();
+};
+
+// Funcion que atiende al Login
+function log(){
+    var loged = {};
+	loged.email = document.getElementById('email');
+	loged.pass = document.getElementById('password');
+
+	let resLogin = isNullEmpty(loged.email);
+    resLogin &= isNullEmpty(loged.pass);
+    resLogin &= isEmailCorrect(loged.email);
+	resLogin &= isPassCorrect(loged.pass);
+
+	if (resLogin){
+		$.ajax({
+			url: "rest/restServices",
+			type: "POST",
+			data: JSON.stringify(loged),
+			contentType: "application/json",
+			complete: resultado
+		});					
+		ui.withImg();
+	}else{
+		ui.danger();
+	}	
+	
+	// FALTA DEVOLVER AL FRONT Y CONTINUAR AL SITIO O QUE LO INGRESE NUEVAMENTE
 }
 
-var childWindow = window.open("https://jsfiddle.net/ozzan/wmxf9fs2/show", "_blank");
 
-*/
+function forgoted(){
+    var forgot = {};
+	forgot.email = document.getElementById('email');
+    forgot.pass1 = document.getElementById('password1');
+    forgot.pass2 = document.getElementById('password2');
 
+    let resForgot = isNullEmpty(forgot.email);
+    resForgot &= isNullEmpty(forgot.pass1);
+    resForgot &= isEmailCorrect(forgot.email);
+    resForgot &= isPassCorrect(forgot.pass1);
+    resForgot &= forgot.pass1 == forgot.pass2 ? true : false;
 
+    if (resForgot) {
+        $.ajax({
+            url: "rest/rest/restServices",
+            type: "POST",
+            data: JSON.stringify(forgot),
+            contentType: "application/json",
+            complete: resultado
+        });
+        ui.withImg();
+    } else {
+        ui.danger();
+    }
 
+    // FALTA DEVOLVER AL FRONT Y CONTINUAR AL SITIO O QUE LO INGRESE NUEVAMENTE
+}
 
-/*
+function registed(){
+    var checkin = {};
+	checkin.name = document.getElementById('firstName');
+    checkin.lastName = document.getElementById('lastName');
+    checkin.email1 = document.getElementById('email1');
+    let email2 = document.getElementById('email2');
+    checkin.address1 = document.getElementById('address1');
+    let address2 = document.getElementById('address2');
+    checkin.year = document.getElementById('year');
+    checkin.month = document.getElementById('month');
+    checkin.day = document.getElementById('day');
+    checkin.photo = localStorage.getItem("myPhoto");
 
-	var http = new XMLHttpRequest();
-	var url = "tu_url";
-	http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	http.open("POST", url, true);
+    let resCheck = isNullEmpty(checkin.name);
+    resCheck &= isNullEmpty(checkin.lastName);
+    resCheck &= isNullEmpty(checkin.email1);
+    resCheck &= isNullEmpty(checkin.address1);
+    resCheck &= isNullEmpty(checkin.year);
+    resCheck &= isNullEmpty(checkin.month);
+    resCheck &= isNullEmpty(checkin.day);
+    resCheck &= isEmailCorrect(checkin.email1);
+    resCheck &= isPassCorrect(checkin.address1);
+    resCheck &= isNameCorrect(checkin.name);
+    resCheck &= isNameCorrect(checkin.lastName);
+    resCheck &= checkin.email1 == email2 ? true : false;
+    resCheck &= checkin.address1 == address2 ? true : false;
+    resCheck &= isYearCorrect(checkin.year);
+    resCheck &= isMonthCorrect(checkin.month);
+    resCheck &= isDayCorrect(checkin.day);
 
-	http.onreadystatechange = function() {
-		if(http.readyState == 4 && http.status == 200) { 
-		//aqui obtienes la respuesta de tu peticion
-		alert(http.responseText);
-		}
-	}
-	http.send(jsonLogin);    
+    if (resCheck) {
+        $.ajax({
+            url: "rest/rest/restServices",
+            type: "POST",
+            data: JSON.stringify(checkin),
+            contentType: "application/json",
+            complete: resultado
+        });
+        ui.withImg();
+    } else {
+        ui.danger();
+    }
 
-http.send(JSON.stringify({email:email, password: password}));
+    // FALTA DEVOLVER AL FRONT Y CONTINUAR AL SITIO O QUE LO INGRESE NUEVAMENTE
+}
 
-*/
+// FUNCTION AND METHODS
+
+// Funcion que supervisa que el campo no este nulo ni vacío
+function isNullEmpty(text) {
+    if(text===null || text===' '){ui.danger();}
+}
+
+// Funcion que supervisa si el email cumple con los requisitos
+function isEmailCorrect(mail){
+    let ress=false; 
+    if(!emailRegex.test(mail.value){ui.invalidAdd('Email inválido. Vuelve a cargarlo.');
+    }else{ress=true;}
+    return ress;
+}
+// // Funcion que supervisa si el password cumple con los requisitos
+function isPassCorrect(passView){
+    let resPass=false;  
+    if(!passRegex.test(passView.value){ui.invalidAdd('Debe contener Números, Letras Mayúsculas y Minúsculas, algunos caracteres.');
+    }else{resPass=true;}
+    return resPass;
+}
+
+// Funcion que supervisa el ingreso de Name y lastName
+function isNameCorrect(names) {
+    let resName=false;
+    if(!namesRegex.test(names.value){ui.invalidAdd('Debe contener solo letras.');}else{resName=true;}
+    return resName;
+}
+
+// Funcion que supervisa que el año de nacimiento sea válido
+function isYearCorrect(year) {
+    let resYear=false;
+    if(!year>1915 && year<=2020){ui.invalidAdd('Debes ingresar un año válido.');}else{resYear=true;}
+    return resYear;
+}
+
+// Funcion que supervisa que el mes de nacimiento sea válido
+function isMonthCorrect(month) {
+    let resMonth=false;
+    if(!month>0 && month<=12){ui.invalidAdd('Debes ingresar un mes válido.');}else{resMonth=true;}
+    return resMonth;
+}
+
+// Funcion que supervisa que el día de nacimiento sea válido
+function isDayCorrect(day) {
+    let resDay=false;
+    if(!day>0 && day<=31){ui.invalidAdd('Debes ingresar un día válido.');}else{resDay=true;}
+    return resDay;
+}
+
+// funcion que capta la img y la guarda en localStorage
+document.querySelector('#fotoPerfil').addEventListener('change', (e)=>{   
+    const reader = new FileReader();    
+    reader.addEventListener("load", () => {
+        localStorage.setItem("myPhoto", reader.result); 
+    });
+    reader.readAsDataURL(e.target.files[0]);
+}); 
