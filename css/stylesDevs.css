@@ -1,0 +1,173 @@
+.fondo{
+    background-color: black;
+}
+.devs{    
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;    
+    background-attachment: fixed;
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: repeat; 
+}
+.nosotros, .soporte{
+    height: 55vh;    
+}
+.manual{
+    height: 120vh;       
+}
+.textNosotros{
+    font-family: Verdana;
+    font-size: 2rem;
+    color: orange;
+}
+.textManual{
+    font-family: Verdana;
+    font-size: 2rem;
+    color: white;   
+}
+.textSoporte{
+    font-family: Verdana;
+    font-size: 2rem;
+    color: green;      
+}
+
+
+.icons{
+    margin-left: 95%;    
+}
+.columna1Inicio, .columna2Inicio, .columna1Formacion, .columna2Formacion, 
+    .columna1Cursos, .columna2Cursos{
+    margin-top: 8%;    
+}
+.name{
+    font-family: Tahoma;
+    font-size: 3rem;
+    color: steelblue;
+}
+
+.descarga{
+    display: inline-block;
+    border: 2px solid #0075f6;
+    margin-top: 10px;
+    padding: 2px 8px;
+    text-transform: uppercase;
+}
+
+.descarga{
+    text-decoration: none;
+    color: #0075f6;
+}
+.titleFormacion, .titleCursos{
+    font-family: Verdana;
+    font-size: 2rem;
+    color:blueviolet;
+}
+.textFormacion, .textCursos{
+    font-family: Arial;
+    font-size: 25px;
+    background-color: black;@media (min-width: 500px) {
+    .piePagina, .cvMain{
+        max-width: 450px;
+    }
+  }
+
+    color: orangered;
+}
+#titleCompetencias{
+    font-family: sans-serif;
+    font-size: 35px;
+    color:greenyellow;
+}
+#titleContacto{
+    font-family: serif;
+    font-size: 35px;
+    color: rgb(15, 228, 228);
+}
+
+.contact{
+    background-image: url('../img/prog1.jpg');
+    height: 70vh;
+}
+
+.container-contacto{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 2%;
+    margin: auto;
+}
+.container-contacto label{
+    color: white;
+}
+.piePagina{
+    background-color: black;
+    font-family: 'Arial';    
+    font-size: x-large;
+    color: darkblue;
+    margin-top: 1vh;
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;    
+}
+.piePaginaContact{
+    background-color: black;
+    font-family: 'Arial';    
+    font-size: x-large;
+    color: darkblue;
+    margin-top: 1vh;
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;  
+}
+
+@media (min-width: 450px) {
+    .piePagina, .cvMain{
+        max-width: 430px;
+    }
+  }
+
+@media (min-width: 510px) {
+    .piePagina, .cvMain{
+        max-width: 480px;
+    }
+  }
+
+@media (min-width: 550px) {
+    .piePagina, .cvMain{
+        max-width: 500px;
+    }
+  }
+
+@media (min-width: 620px) {    
+    .piePagina, .cvMain{
+        max-width: 580px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .piePagina, .cvMain{
+        max-width: 720px;
+    }
+  }  
+  
+  @media (min-width: 990px) {
+    .piePagina, .cvMain{
+        max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .piePagina, .cvMain{
+        max-width: 100%;
+    }
+  }

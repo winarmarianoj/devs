@@ -3,9 +3,9 @@ class UI {
         const linksList = document.getElementById('links-list');
         const element = document.createElement('div');
         element.innerHTML = `
-						<div class="card-body text-center mb-2">						
-						${link}
-				<a href="#" class="btn btn-danger" id="btnDelete" name="delete">X</a>
+						<div class="card-body text-center mb-2">	
+                <a tittles="Links" href="${link}" target="_blank">${link}</a>
+				<a href="" class="btn btn-danger" id="btnDelete" name="delete">X</a>
 			</div>
         `;
         linksList.appendChild(element);

@@ -31,13 +31,10 @@
                             <div class=" iconsMenu collapse navbar-collapse right hide-on-med-and-down" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">                                
                                     <a class="nav-link" href="#inicio"><img src="icons/hogar.png" alt=""></a>
-                                    <a class="nav-link" href="#inicio"><img src="icons/contactos.png" alt=""></a>
+                                    <a class="nav-link" href="friends.html"><img src="icons/contactos.png" alt=""></a>
                                     <a class="nav-link" href="#inicio"><img src="icons/mensaje.png" alt=""></a>
-                                    <a class="nav-link" href="https://radio.x-team.com/"><img src="icons/radio.png" alt=""></a>
-                                    <a class="nav-link" href="#inicio"><img src="icons/chat.png" alt=""></a>
-                                    <a class="nav-link" href="#inicio"><img src="icons/buscar.png" alt=""></a>
-                                    <a class="nav-link" href="#inicio"><img src="icons/services.png" alt=""></a>
-                                    <a class="nav-link" href="#inicio"><img src="icons/settings.png" alt=""></a>
+                                    <a class="nav-link" href="https://radio.x-team.com/"><img src="icons/radio.png" alt="" target="_blank"></a>
+                                    <a class="nav-link" href="users.html"><img src="icons/buscar.png" alt=""></a>
                                 </ul> 
 
                                 <form class="form-inline my-2 my-lg-0">
@@ -63,46 +60,27 @@
                 <!--INICIO COLUMNA 1-->
                 <section class="columna1 col-2 offset-fixed f-left pt-2">
 
-                    <!--INICIO LINKS-->
+                    <!--INICIO SESION DE USUARIO-->
                     <div id="fondoLinks" class="row col-lg-12 side-left">
                         <div class="d-flex">
                             <div>
-                                <img class="rounded-circle" src="https://picsum.photos/80/80/?random?image=4" width="30" alt="">
+                                <img class="rounded-circle" src="fotos/chico.png" width="90" alt="">
                             </div>
                             <div class="ml-3 h7">
-                                <a href="#">ACA OBTENER EL NOMBRE DEL USUARIO</a>
+                                <a href="profile.html">ACA OBTENER EL NOMBRE DEL USUARIO</a>
                             </div>
-                        </div>                        
-                        <p id="titleLinks">Tus Links</p><br>
-                        
-                        <div id="links-list"></div>                        
+                        </div>            
                     </div> 
-                    <!--FIN LINKS-->
+                    <!--FIN SESION DE USUARIO-->
                     <hr>
                     <!--INICIA OPCIONES-->   
                     <div class=" py-3 pt-2">
-                        
-                        <ul class="titleRegister list-inline">
-                            <li class="list-inline-item"><a titles="AMIGOS" href="" target="_blank"> 
-                                <img src="icons/amigos.png" alt="AMIGOS" target="_blank"/></a></li>
-                            <li class="list-inline-item"><a href="#"></a>
-                                <p id="detalleOpciones">Lista de Amigos</p>
-                            </li>
-                        </ul>
 
                         <ul class="titleRegister list-inline">
                             <li class="list-inline-item"><a tittles="JUEGOS" href="https://www.juegosjuegos.com/" target="_blank">
                                     <img src="icons/juegos.png" alt="JUEGOS"/></a></li>
                             <li class="list-inline-item"><a href="#"></a>
                                 <p id="detalleOpciones">Juegos</p>
-                            </li>
-                        </ul>
-
-                        <ul class="titleRegister list-inline">
-                            <li class="list-inline-item"><a titles="GRUPOS" href="" target="_blank">
-                                    <img src="icons/grupos.png" alt="GRUPOS" /></a></li>
-                            <li class="list-inline-item"><a href="#"></a>
-                                <p id="detalleOpciones">Grupos</p>
                             </li>
                         </ul>
 
@@ -161,9 +139,33 @@
                                 <p id="detalleOpciones">Encuentros IT</p>
                             </li>
                         </ul>
-
                     </div>
                     <!--FIN OPCIONES-->
+
+                    <!--Inicio del Footer-->
+                    <footer class="piePagina col-12 s12 m6">
+                        <div class="col-12 s12 m6 text-muted text-center text-small">
+                            <div class="datos">
+                                <p class="">&copy; 2020 DEVS</p>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="devsNosotros.html">Nosotros</a></li>
+                                    <li class="list-inline-item"><a href="devsManual.html">Manual</a></li>
+                                    <li class="list-inline-item"><a href="devsSoporte.html">Soporte</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="list-inline-item"><img src="logos/smallLogos/facebook.png" alt=""></li>
+                                    <li class="list-inline-item"><img src="logos/smallLogos/instagram.png" alt=""></li>         
+                                    <li class="list-inline-item"><img src="logos/smallLogos/twiter.png" alt=""></li>
+                                    <li class="list-inline-item"><img src="logos/smallLogos/linkedin.png" alt=""></li>
+                                    <li class="list-inline-item"><img src="logos/smallLogos/whatsapp.png" alt=""></li>
+                                    <li class="list-inline-item"><img src="logos/smallLogos/youtube.png" alt=""></li>           
+                                </ul>
+                    
+                            </div>
+                        </div>
+                        <br><br>
+                    </footer>
+                    <!--Fin del Footer-->   
 
                 </section>
                 <!--FIN COLUMNA 1-->
@@ -218,8 +220,7 @@
                             <!--INICIO BOTONES DE ELECCION / Mas colores info, light, dark, link-->
                             <div class="botons card-footer p-2">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <input type="button" name="Links" id="btnLinks" value="Links" onclick="formLinks(btnLinks)" class="btn btn-primary"/>
-                                    <input type="button" name="History" id="btnHistory" value="History" onclick="formHistory(btnHistory)" class="btn btn-secondary"/>
+                                    <input type="button" name="Links" id="btnLinks" value="Links" onclick="formLinks(btnLinks)" class="btn btn-primary"/>                                    
                                     <input type="button" name="Post" id="btnPosted" value="Post" onclick="formPosted(btnPosted)" class="btn btn-success"/>
                                     <input type="button" name="Photos" id="btnPhotos" value="Photos" onclick="formPhotos(btnPhotos)" class="btn btn-danger"/> 
                                     <input type="button" name="Message" id="btnMessage" value="Message" onclick="formMessage(btnMessage)" class="btn btn-warning"/>                                      
@@ -269,48 +270,12 @@
                     </div>
                     <!--FIN PUBLICIDADES-->                    
 
-                    <!--INICIO CUMPLEAÑOS-->
-                    <div class="cumples">                        
-                        <p id="titlePublicidades">Cumpleaños</p>
-                        <div class="card">
+                    <div class="card"></div>                    
 
-                        </div>
-                    </div>
-                    <!--FIN CUMPLEAÑOS-->
-
-                    <!--INICIO -->
-                    <div class="cumples">
-                        <p id="titlePublicidades">Algo Mas</p>
-                        <div class="card">
-                    
-                        </div>
-                    </div>
-                    <!--FIN -->
-
-                    <!--Inicio del Footer-->
-                    <footer class="piePagina col-12 s12 m6">
-                        <div class="col-12 s12 m6 text-muted text-center text-small">
-                            <div class="datos">
-                                <p class="mb-3 my-2 pt-5">&copy; 2020 DEVS</p>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item"><a href="#">Nosotros</a></li>
-                                    <li class="list-inline-item"><a href="#">Términos</a></li>
-                                    <li class="list-inline-item"><a href="#">Soporte</a></li>                                    
-                                </ul>
-                                <ul>
-                                    <li class="list-inline-item"><img src="logos/facebook.png" alt=""></li>
-                                    <li class="list-inline-item"><img src="logos/instagram.png" alt=""></li>
-                                    <li class="list-inline-item"><img src="logos/linkedin.png" alt=""></li>
-                                    <li class="list-inline-item"><img src="logos/twiter.png" alt=""></li>
-                                    <li class="list-inline-item"><img src="logos/whatsapp.png" alt=""></li>
-                                    <li class="list-inline-item"><img src="logos/youtube.png" alt=""></li>
-                                </ul>
-                    
-                            </div>
-                        </div>
-                        <br><br>
-                    </footer>
-                    <!--Fin del Footer-->                    
+                    <!--INICIO TUS LINKS-->
+                    <p id="titleLinks">Agregá aquí tus Links</p><br>
+                    <div id="links-list"></div>   
+                    <!--FIN TUS LINKS-->                                     
 
                 </section>                
                 <!--FIN COLUMNA 3--> 
@@ -325,7 +290,7 @@
     
     <script src="js/ui.js"></script>
     <script src="js/links.js"></script>
-    <script src="js/history.js"></script>
+    <script src="js/photos.js"></script>
     <script src="js/login.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
