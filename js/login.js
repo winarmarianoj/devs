@@ -129,14 +129,14 @@ function isNullEmpty(text) {
 // Funcion que supervisa si el email cumple con los requisitos
 function isEmailCorrect(mail){
     let ress=false; 
-    if(!emailRegex.test(mail.value){ui.invalidAdd('Email inválido. Vuelve a cargarlo.');
+    if(!emailRegex.test(mail.value)){ui.invalidAdd('Email inválido. Vuelve a cargarlo.');
     }else{ress=true;}
     return ress;
 }
 // // Funcion que supervisa si el password cumple con los requisitos
 function isPassCorrect(passView){
     let resPass=false;  
-    if(!passRegex.test(passView.value){ui.invalidAdd('Debe contener Números, Letras Mayúsculas y Minúsculas, algunos caracteres.');
+    if(!passRegex.test(passView.value)){ui.invalidAdd('Debe contener Números, Letras Mayúsculas y Minúsculas, algunos caracteres.');
     }else{resPass=true;}
     return resPass;
 }
@@ -144,7 +144,7 @@ function isPassCorrect(passView){
 // Funcion que supervisa el ingreso de Name y lastName
 function isNameCorrect(names) {
     let resName=false;
-    if(!namesRegex.test(names.value){ui.invalidAdd('Debe contener solo letras.');}else{resName=true;}
+    if(!namesRegex.test(names.value)){ui.invalidAdd('Debe contener solo letras.');}else{resName=true;}
     return resName;
 }
 
@@ -170,10 +170,11 @@ function isDayCorrect(day) {
 }
 
 // funcion que capta la img y la guarda en localStorage
+/*
 document.querySelector('#fotoPerfil').addEventListener('change', (e)=>{   
     const reader = new FileReader();    
     reader.addEventListener("load", () => {
         localStorage.setItem("myPhoto", reader.result); 
     });
     reader.readAsDataURL(e.target.files[0]);
-}); 
+}); */

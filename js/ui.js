@@ -1,15 +1,4 @@
 class UI {
-    addLinks(link) {
-        const linksList = document.getElementById('links-list');
-        const element = document.createElement('div');
-        element.innerHTML = `
-						<div class="card-body text-center mb-2">	
-                <a tittles="Links" href="${link}" target="_blank">${link}</a>
-				<a href="" class="btn btn-danger" id="btnDelete" name="delete">X</a>
-			</div>
-        `;
-        linksList.appendChild(element);
-    }
 
     addPost(dato) {
         const postLists = document.getElementById('publicacionesPost');
@@ -53,7 +42,6 @@ class UI {
         const postLists = document.getElementById('publicacionesPost');
         var list = getPhotosList();
         const postPhoto = document.createElement('div');
-        /*<img id="image-preview" src="" alt="Preview">*/
         
         for (let i = 0; i < list.length; i++){
             if(dato == list[i].texto){
@@ -98,16 +86,7 @@ class UI {
                 `;  
                 postLists.appendChild(postPhoto); 
                 
-            }  
-            /* 
-            const recentImageDataUrl = localStorage.getItem("recent-image");
-            console.log(recentImageDataUrl)
-            console.log(divs.texto)
-            console.log(divs.img)
-            if (recentImageDataUrl) {
-                document.querySelector("#i").setAttribute("src", recentImageDataUrl);
-            } 
-            */             
+            }                     
         }                           
     }
 
@@ -121,19 +100,6 @@ class UI {
         if (element.name === "delete") {
             element.parentElement.parentElement.parentElement.parentElement.remove();
         }
-    }
-
-    showMessage(info, cssClass) {
-        const linksList = document.getElementById('links-list');
-        const element = document.createElement("div");
-        element.className = `alert alert-${cssClass} mt-2`;
-        element.innerHTML = info;
-        linksList.appendChild(element);
-
-        // Remove the Message after al segundo y medio
-        setTimeout(function () {
-            document.querySelector(".alert").remove();
-        }, 2500);
     }
 
     /* BOTONES Y FUNCIONES DE MENSAJES DE RESPUESTA */

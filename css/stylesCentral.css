@@ -126,9 +126,15 @@ body{
     color: cornsilk;
 }
 div.carousel-fotos{
-	background-color: rgba(17, 8, 8, 0.979);  /*rgba(148, 3, 3, 0.7);*/
+	background-color: rgba(17, 8, 8, 0.979);  
 	padding: 5px 0 50px;
-    margin: 18px 0 10px;}
+    margin: 18px 0 10px;
+}
+div.carousel-publicidades{
+    background-color: rgba(148, 3, 3, 0.7);
+    padding: 5px 0 50px;
+    margin: 18px 0 10px;
+}
 
 div.galeria{    
     width:95%;
@@ -162,7 +168,6 @@ div.imagen img:hover{
     justify-content: center;    
 }
 .publicidades{
-    /*max-height: 50vh;    */
 	padding: 5px 0 5px;
     margin: 10px 0 0px;
 }
@@ -200,6 +205,16 @@ div.imagen img:hover{
     border-radius: 100%;
 }
 
+.columna1{
+    margin-left: 1%;
+}
+
+.columna2{
+    margin-left: 15%;
+}
+.columna3{
+    margin-left: 73%;
+}
 
 /* MEDIAS QUERIES*/
 
