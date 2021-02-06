@@ -1,5 +1,17 @@
 class UI {
 
+    addLinks(link) {
+        const linksList = document.getElementById('links');
+        const element = document.createElement('div');
+        element.innerHTML = `
+                        <div class="card-body text-center mb-2">    
+                <a tittles="Links" href=http://${link} target="_blank">http://${link}</a>
+                <a href="" class="btn btn-danger" id="btnDelete" name="delete">X</a>
+            </div>
+        `;
+        linksList.appendChild(element);
+    }
+
     addPost(dato) {
         const postLists = document.getElementById('publicacionesPost');
         const element = document.createElement('div');
@@ -100,6 +112,19 @@ class UI {
         if (element.name === "delete") {
             element.parentElement.parentElement.parentElement.parentElement.remove();
         }
+    }
+
+    showMessage(info, cssClass) {
+        const linksList = document.getElementById('links');
+        const element = document.createElement("div");
+        element.className = `alert alert-${cssClass} mt-2`;
+        element.innerHTML = info;
+        linksList.appendChild(element);
+
+        // Remove the Message after al segundo y medio
+        setTimeout(function () {
+            document.querySelector(".alert").remove();
+        }, 2500);
     }
 
     /* BOTONES Y FUNCIONES DE MENSAJES DE RESPUESTA */

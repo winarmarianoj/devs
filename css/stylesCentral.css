@@ -167,6 +167,12 @@ div.imagen img:hover{
     font-size: 3rem;
     justify-content: center;    
 }
+.titleLinks{
+    font-family: Impact;
+    font-size: 2rem;
+    margin-left: 35%;
+    color: green;
+}
 .publicidades{
 	padding: 5px 0 5px;
     margin: 10px 0 0px;
@@ -213,8 +219,12 @@ div.imagen img:hover{
     margin-left: 15%;
 }
 .columna3{
-    margin-left: 73%;
+    margin-left: 78%;
 }
+.clima{
+    margin-left: 10%;
+}
+
 
 /* MEDIAS QUERIES*/
 
