@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Devs - Registro</title>
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
+        <link rel="stylesheet" href="../css/contact.css"> 
+    </head>
+
+    <body class="contacto bg-light">   
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+        <header></header>        
+
+        <!--Inicio Main-->
+        <main>
+
+            <section class="container-fluid">
+
+                <!--Inicia Formulario de Contacto-->
+                <section>                    
+                    <div class="py-3 pt-2 text-muted text-center text-small">
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><img src="../img/logos.png" width="10%" alt=""></li>
+                            <li class="list-inline-item text-center"><a href="#"></a><p id="titleContacts">Formulario de Registro</p></li>
+                        </ul>
+                    </div>
+                    
+                    <!--INICIA SOLICITUD DE DATOS-->
+                    <div class="row justify-content-center" >            
+                                            
+                        <div class="col-md-8 order-md-1">                       
+        
+                            <!--INICIO DEL FORMULARIO REGISTER-->
+                            <form id="formRegister" class="needs-validation" novalidate>
+                                <div class="row">
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="firstName">Nombre</label>
+                                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                                            <div class="invalid-feedback">
+                                                    El nombre es requerido y obligatorio.
+                                            </div>
+                                        </div>            
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="lastName">Apellido</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                            <div class="invalid-feedback">
+                                                    El segundo nombre es requerido y obligatorio.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="email">Correo Electrónico</label>
+                                            <input type="email" class="form-control" id="email1" placeholder="tu-correo@example.com"  value="" required>
+                                            <div class="invalid-feedback">
+                                                Por favor ingresar una casilla de email válida.
+                                            </div>
+                                        </div>    
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="email2">Repita Correo Electrónico</label>
+                                            <input type="email" class="form-control" id="email2" placeholder="Ingrese nuevamente su email"  value="" required>
+                                            <div class="invalid-feedback">
+                                                Por favor ingresar nuevamente su casilla de email válida.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="password1">Contraseña para su Usuario</label>
+                                            <input type="password" class="form-control" id="password1" placeholder="Por favor ingrese su contraseña">
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese su contraseña.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-5">
+                                            <label id="labels" for="password2">Repita Contraseña</label>
+                                            <input type="password" class="form-control" id="password2" placeholder="Por favor repita su contraseña">
+                                            <div class="invalid-feedback">
+                                                Por favor repita su contraseña.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-5">
+                                            <label id="labels" for="year">Año</label> 
+                                            <input type="text" class="form-control" id="year" placeholder="AAAA" value="" required>                 
+                                        </div>  
+                                        <div class="col-md-3 mb-5">
+                                            <label id="labels" for="month">Mes</label>
+                                            <input type="text" class="form-control" id="month" placeholder="MM" value="" required>                 
+                                        </div>  
+                                        <div class="col-md-3 mb-5">               
+                                            <label id="labels" for="day">Día</label>
+                                            <input type="text" class="form-control" id="day" placeholder="DD" value="" required>               
+                                        </div> 
+                                        <div class="col-md-12 mb-5">
+                                            <label id="labels" for="foto">
+                                            Podés ingresar tu Foto de Perfil no mayor a 1 mega</label>
+                                            
+                                            <!-- BOTON EXAMINAR DE LA FOTO PERFIL-->
+                                            <input type="file" id="fotoPerfil"/>  
+
+                                        </div> 
+                                </div>                                
+
+                                <!-- BOTON REGISTRAR AZUL -->
+                                <input type="button" name="Register" id="btnRegister" value="Registrarse" onclick="formRegister(btnRegister)" class="btn btn-primary"/>
+                                <br><br>
+
+                                <!--INICIA CAPTCHA-->
+                                <div class="g-recaptcha" data-sitekey="6LcU6O4ZAAAAAKvKKqviVLggkS-0JPi5DtxXptWD"
+                                    data-callback="enableCaptcha"></div>
+                                <!--FIN CAPTCHA-->
+
+                            </form>
+                            <!--FIN DEL FORMULARIO REGISTER-->                            
+                        </div>                           
+                    </div>
+                    <!--FIN SOLICITUD DE DATOS-->
+
+                    <!--Inicio Footer-->
+                    <footer class="pt-3 text-muted text-center text-small">                        
+                        <p class="mb-1">&copy; 2020 DEVS</p>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#">Nosotros</a></li>
+                            <li class="list-inline-item"><a href="#">Términos</a></li>
+                            <li class="list-inline-item"><a href="#">Soporte</a></li>
+                            <li class="list-inline-item"><a href="#"></a></li>
+                            <li class="list-inline-item"><img src="../logos/facebook.png" alt=""></li>
+                            <li class="list-inline-item"><img src="../logos/instagram.png" alt=""></li>
+                            <li class="list-inline-item"><img src="../logos/linkedin.png" alt=""></li>
+                            <li class="list-inline-item"><img src="../logos/twiter.png" alt=""></li>
+                            <li class="list-inline-item"><img src="../logos/youtube.png" alt=""></li> 
+                        </ul>
+                        <br>
+            
+                    </footer>
+                    <!--Fin Footer-->
+
+                </section> 
+                <!--Finaliza Formulario de Contacto-->
+
+            </section>
+
+        </main>
+        <!--Fin Main-->
+        <script src="../js/captcha.js"></script>
+        <script src="../js/register.js"></script>
+        <script src="../js/ui.js"></script>
+        <script src="../js/uiFunctions.js"></script>
+        <script src="../js/uiMessages.js"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/sweetalert2.all.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+
+</html>

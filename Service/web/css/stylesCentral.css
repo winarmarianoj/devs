@@ -1,0 +1,183 @@
+.offset-fixed{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+.f-left{
+    margin-left: 0%;
+    left: 0
+}
+.f-right{
+    margin-right: 0%;
+    right: 0;
+}
+.side-left{
+    margin-top: 4rem;
+    margin-left: 8.07rem;            
+}
+.side-right{
+    margin-top: 4rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    justify-content: center;            
+    height: calc(50vh - 8rem);
+    width: calc(15vh - 8rem);            
+}
+.img-circle{
+    width: 5rem;
+    height: 3.1rem;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    border: 1px solid #dddddd;
+}
+.menu{
+    background: black;    
+}
+.iconsMenu{
+    opacity: 80%;        
+}
+#fondoLink{
+    height: calc(50vh - 8rem);
+}
+#titleRealizaPublicaciones{
+    font-family: Verdana;
+    font-size: 2rem;
+    color: lime;
+    background-color: #440202;
+    border-radius: 5%;    
+}
+#btnLinks, #btnPosted, #btnPhotos{
+    padding-bottom: 3%;
+    padding-block: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.titleEvents{
+    font-family: 'Segoe UI';
+    font-size: 2rem;
+    color: cornsilk;
+}
+div.carousel-fotos{
+	background-color: rgba(17, 8, 8, 0.979);  /*rgba(148, 3, 3, 0.7);*/
+	padding: 5px 0 50px;
+    margin: 18px 0 10px;
+}
+div.galeria{    
+    width:95%;
+	margin:0 auto;
+	display: flex;
+	flex-flow:wrap;
+	justify-content: center;
+}
+div.imagen{
+	margin: 2px 2px;
+    width: 24%;
+}
+div.imagen img{
+	transition: 0.6s;
+    max-width: 100%;    
+}
+div.imagen img:hover{
+	transform: scale(1.2);
+	overflow: hidden;
+}
+#textPhotosCarousel{
+    font-family: Helvetica;
+    font-size: 1rem;
+    color: chartreuse;
+}
+#titlePubli{
+    font-family: Impact;
+    font-size: 2rem;
+    margin-top: 3%;
+    margin-left: 10%;
+    text-align: center;
+}
+#publicidades{
+	padding: 5px 0 5px;
+    margin: 10px 0 0px;
+}
+#titleLink{
+    font-family: Impact;
+    font-size: 2rem;
+    margin-top: 3%;
+    margin-left: 10%;
+    text-align: center;
+}
+.galeriaPublicaciones{
+    min-width: 48vh;
+	margin:0 auto;
+	display: flex;
+	flex-flow:wrap;
+	justify-content: center;
+}
+#textPhotosPubli{
+    font-family: Helvetica;
+    font-size: 1rem;
+    color: rgb(25, 0, 255);
+}
+#detalleOpciones{
+    font-family: Verdana;
+    font-size: 18px;
+}
+.socialweb{
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;   
+    background-attachment: fixed;
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: repeat;  
+}
+#btnDelete{
+    border-radius: 100%;
+}
+#addFriends{
+    background: green;
+}
+#notFriends{
+    background: red;
+}
+
+.columna2{
+    margin-left: 15%;
+}
+
+.columna3{
+    margin-left: 74%;
+}
+
+/* MEDIAS QUERIES*/
+
+@media (min-width: 450px) {
+        .columna1, .columna2, .columna3{
+          max-width: 380px;
+    }    
+}
+
+@media (min-width: 600px) {
+        .columna1, .columna2, .columna3{
+          max-width: 540px;
+    }
+}
+  
+@media (min-width: 768px) {
+        .columna1, .columna2, .columna3{
+          max-width: 720px;
+    }
+}  
+
+@media (min-width: 992px) {
+        .columna1, .columna2, .columna3{
+          max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+        .columna1, .columna2, .columna3{
+          max-width: 100%;
+    }
+}

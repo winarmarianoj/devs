@@ -1,0 +1,115 @@
+.fondo{
+    background-color: black;
+}
+.devs{    
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;    
+    background-attachment: fixed;
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: repeat; 
+}
+.nosotros, .soporte{
+    height: 55vh;    
+}
+.manual{
+    height: 150vh;       
+}
+.textNosotros{
+    font-family: Verdana;
+    font-size: 2rem;
+    color: orange;
+}
+.textManual{
+    font-family: Verdana;
+    font-size: 2rem;
+    color: white;   
+}
+.textSoporte{
+    font-family: Verdana;
+    font-size: 2rem;
+    color: green;      
+}
+.icons{
+    margin-left: 95%;    
+}
+#titleCompetencias{
+    font-family: sans-serif;
+    font-size: 35px;
+    color:greenyellow;
+}
+#titleContacto{
+    font-family: serif;
+    font-size: 35px;
+    color: rgb(15, 228, 228);
+}
+
+.contact{
+    background-image: url('../img/prog1.jpg');
+    height: 70vh;
+}
+
+.container-contacto{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 2%;
+    margin: auto;
+}
+.container-contacto label{
+    color: white;
+}
+.piePagina{
+    background-color: black;
+    font-family: 'Arial';    
+    font-size: x-large;
+    color: darkblue;
+    margin-top: 1vh;
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;    
+}
+.piePaginaContact{
+    background-color: black;
+    font-family: 'Arial';    
+    font-size: x-large;
+    color: darkblue;
+    margin-top: 1vh;
+    max-width: 100%;
+    max-height: 100%;
+    padding-right: 1px;
+    padding-left: 1px;
+    margin-right: auto;
+    margin-left: auto;  
+}
+
+/* MEDIAS QUERYS */
+
+@media (min-width: 450px) {
+    .manual,.soporte,.nosotros,.piePagina{max-width: 430px;}
+}
+@media (min-width: 500px) {
+    .manual,.soporte,.nosotros,.piePagina{max-width: 460px;}
+}
+@media (min-width: 600px) {
+    .manual,.soporte,.nosotros,.piePagina{max-width: 550px;}
+}
+@media (min-width: 700px) {    
+    .manual,.soporte,.nosotros,.piePagina{max-width: 650px;}
+} 
+@media (min-width: 768px) {
+    .manual,.soporte,.nosotros,.piePagina{max-width: 720px;}
+} 
+@media (min-width: 990px) {
+    .manual,.soporte,.nosotros,.piePagina{max-width: 960px;}
+}  
+@media (min-width: 1200px) {
+    .manual,.soporte,.nosotros,.piePagina{max-width: 100%;}
+}

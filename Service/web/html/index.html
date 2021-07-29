@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/stylesCentral.css">    
+    <link rel="stylesheet" href="../css/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <title>Devs</title>
+</head>
+
+<body>
+    
+	<!--Comienzo del Header-->
+    <header>
+        <div class="container">
+            <span id="inicio"></span>
+            <!--Comienzo Area Menu-->
+            <div class="row">
+                <div class="col-12">
+                    <!--Comienzo de la Barra de Menu -->
+                    <nav class="menu navbar navbar-expand-lg fixed-top"> 
+                        <img src="../img/logos.png" width="46px" height="46px" alt="">
+                        <a class="nav-link" href="#"></a>
+                        <div class=" iconsMenu collapse navbar-collapse right hide-on-med-and-down" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <a class="nav-link" href="#inicio"><img src="../icons/hogar.png" alt=""></a>
+                                <a id="profiles" class="nav-link" href="profile.html"><img src="../icons/perfil.png" alt=""></a>
+                                <a id="contactos" class="nav-link" href="friends.html"><img src="../icons/contactos.png" alt=""></a>
+                                <a id="buscar" class="nav-link" href="users.html"><img src="../icons/buscar.png" alt=""></a>
+                                <a id="solicitud" class="nav-link" href="pending.html"><img src="../icons/solicitud.png" alt=""></a>
+                                <a id="logout" class="nav-link" href=""
+                                   onclick="formLogout(logout)"><img src="../icons/logout.png" alt=""></a>
+                            </ul>
+
+                            <!-- INICIO BOTONES DE DIA Y NOCHE-->
+                            <button class="btn btn-dark" id="btnInicio" onclick="formColorsInicio(btnInicio)"><img src="../icons/inicio.png" alt=""></button>
+                            <button class="btn btn-dark" id="btnSunrise" onclick="formColorsSunrise(btnSunrise)"><img src="../icons/amanecer.png" alt=""></button>
+                            <button class="btn btn-dark" id="btnDays" onclick="formColorsDay(btnDays)"><img src="../icons/dom.png" alt=""></button>
+                            <button class="btn btn-dark" id="btnNight" onclick="formColorsNight(btnNight)"><img src="../icons/noche.png" alt=""></button>
+                            <!-- FIN BOTONES DE DIA Y NOCHE-->
+                        </div>
+                    </nav>
+                    <!--Fin de la Barra de Menu-->
+                </div>
+            </div>
+            <!--Fin Area Menu-->
+        </div>
+    </header>
+    <!--Fin del Header-->
+
+    <!--Comienzo del Main-->
+    <main class="socialweb">
+        <div class="container-fluid">
+            <div class="row">                    
+
+                <!--INICIO COLUMNA 1-->
+                <section class="columna1 fixed-top col-2 offset-fixed f-left my-5 pt-3">
+
+                    <!--INICIO SESION DE USUARIO-->
+                     <div id="profileUser" class="row col-lg-12 side-left"></div>
+                    <!--FIN SESION DE USUARIO-->
+                    <hr>
+                    <!--INICIA OPCIONES-->   
+                    <div id="detalleOpciones" class="py-3 pt-2">
+
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><a tittles="JUEGOS" href="https://www.juegosjuegos.com/" target="_blank">
+                                    <img src="../icons/juegos.png" alt="JUEGOS"/></a></li>
+                            <li class="list-inline-item"><a href="#"></a>
+                                <p id="juegos" class="allLinks">Juegos</p>
+                            </li>
+                        </ul>
+
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><a titles="EMPLEOS" href="https://www.computrabajo.com.ar/" target="_blank">
+                                    <img src="../icons/maletin.png" alt="EMPLEOS" /></a></li>
+                            <li class="list-inline-item"><a href="#"></a>
+                                <p id="empleos" class="allLinks">Empleos</p>
+                            </li>
+                        </ul>
+
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><a titles="OFERTAS" href="https://www.mercadolibre.com.ar/" target="_blank">
+                                    <img src="../icons/ofertas.png" alt="OFERTAS" /></a></li>
+                            <li class="list-inline-item"><a href="#"></a>
+                                <p id="ofertas" class="allLinks">Ofertas</p>
+                            </li>
+                        </ul>
+
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><a titles="PELICULAS" href="https://cuevana3.io/" target="_blank">
+                                    <img src="../icons/video.png" alt="PELICULAS" /></a></li>
+                            <li class="list-inline-item"><a href="#"></a>
+                                <p id="peliculas" class="allLinks">Películas</p>
+                            </li>
+                        </ul>
+
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><a titles="CALENDARIO" href="https://doodle.com/es/calendario-online" target="_blank">
+                                    <img src="../icons/calendario.png" alt="CALENDARIO" /></a></li>
+                            <li class="list-inline-item"><a href="#"></a>
+                                <p id="calendario" class="allLinks">Calendario</p>
+                            </li>
+                        </ul>
+
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><a titles="CURSOSYCARRERAS" href="http://www.cursosycarreras.com/" target="_blank">
+                                    <img src="../icons/estudiar.png" alt="CURSOSYCARRERAS" /></a></li>
+                            <li class="list-inline-item"><a href="#"></a>
+                                <p id="cursos" class="allLinks">Cursos y Carreras</p>
+                            </li>
+                        </ul>
+
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item"><a titles="ENCUENTROSIT" href="https://escuela.it/cursos/encuentros-it-quedateencasa" target="_blank">
+                                    <img src="../icons/it.png" alt="ENCUENTROSIT" /></a></li>
+                            <li class="list-inline-item"><a href="#"></a>
+                                <p id="encuentros" class="allLinks">Encuentros IT</p>
+                            </li>
+                        </ul>
+
+                        <ul class="titleRegister list-inline">
+                            <li class="list-inline-item">
+                                <a titles="CUVL" href="https://www.vicentelopez.gov.ar/centrouniversitariovl" target="_blank">
+                                    <img src="../icons/cuvl.png" alt="CUVL" /></a></li>
+                            <li class="list-inline-item"><a href="#"></a>
+                                <p id="cuvl" class="allLinks">CUVL</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--FIN OPCIONES-->
+
+                    <!--Inicio del Footer-->
+                    <footer class="col-12 s12 m6">
+                        <div class="col-12 s12 m6 text-muted text-center text-small">
+                            <div>
+                                <p class="datos">&copy; 2020 DEVS</p>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="devsNosotros.html">Nosotros</a></li>
+                                    <li class="list-inline-item"><a href="devsManual.html">Manual</a></li>
+                                    <li class="list-inline-item"><a href="devsSoporte.html">Soporte</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="list-inline-item"><img src="../logos/smallLogos/facebook.png" alt=""></li>
+                                    <li class="list-inline-item"><img src="../logos/smallLogos/instagram.png" alt=""></li>         
+                                    <li class="list-inline-item"><img src="../logos/smallLogos/twiter.png" alt=""></li>
+                                    <li class="list-inline-item"><img src="../logos/smallLogos/linkedin.png" alt=""></li>
+                                    <li class="list-inline-item"><img src="../logos/smallLogos/whatsapp.png" alt=""></li>
+                                    <li class="list-inline-item"><img src="../logos/smallLogos/youtube.png" alt=""></li>           
+                                </ul>                    
+                            </div>
+                        </div>
+                    </footer>
+                    <!--Fin del Footer-->   
+
+                </section>
+                <!--FIN COLUMNA 1-->
+
+                <!--INICIA COLUMNA 2-->
+                <section class="columna2 col-7 offset-fixed my-5 pt-2">                   
+
+                    <!--INICIO CARROUSEL EVENTOS DE TECNOLOGIA-->
+                    <div class="carousel-fotos carousel slide w-100 pb-4" data-ride="carousel">
+                        <p class="titleEvents text-center">EVENTOS DE TECNOLOGÍA</p> 
+                        <div class="galeria carousel-inner w-100" role="listbox"> 
+                            <div class="carousel-item row no-gutters active">
+                                <div id="textPhotosCarousel" class="imagen col-3 float-left text-center"><a titles="IBM" href="https://www.ibm.com/events/think/" target="_blank"><img src="../img/ibm.jpg" alt="IBM"/></a>IBM THINK</div>
+                                <div id="textPhotosCarousel" class="imagen col-3 float-left text-center"><a titles="GAMERS" href="https://gdconf.com/" target="_blank"><img src="../img/gameDevelopers.png" alt="GAMERS"/></a>GAME DEVELOPERS</div>
+                                <div id="textPhotosCarousel" class="imagen col-3 float-left text-center"><a titles="ADOBE" href="https://summit.adobe.com/na/" target="_blank"><img src="../img/adobe.jpg" alt="ADOBE"/></a>ADOBE SUBMIT</div>
+                                <div id="textPhotosCarousel" class="imagen col-3 float-left text-center"><a titles="GOOGLE" href="https://cloud.withgoogle.com/next18/sf/" target="_blank"><img src="../img/google.jpg" alt="GOOGLE"/></a>GOOGLE CLOUD</div>
+                            </div>
+                            <div class="carousel-item row no-gutters">
+                                <div id="textPhotosCarousel" class="imagen col-3 float-left text-center"><a titles="SLACK" href="https://slackfrontiers.com/" target="_blank"><img src="../img/slack.jpg" alt="SLACK"/></a>SLACK FRONTIERS</div>
+                                <div id="textPhotosCarousel" class="imagen col-3 float-left text-center"><a titles="DELL" href="https://www.delltechnologiesworld.com/index.htm#" target="_blank"><img src="../img/dell.jpg" alt="DELL"/></a>DELL TECHNOLOGIES</div>
+                                <div id="textPhotosCarousel" class="imagen col-3 float-left text-center"><a titles="ORACLE" href="https://www.oracle.com/openworld/" target="_blank"><img src="../img/oracle.jpg" alt="ORACLE"/></a>ORACLE REIMAGINED</div>
+                                <div id="textPhotosCarousel" class="imagen col-3 float-left text-center"><a titles="SALESFORCE" href="https://www.salesforce.com/dreamforce/" target="_blank"><img src="../img/salesforce.jpg" alt="SALESFORCE"/></a>SALESFORCE</div>
+                            </div>
+                        </div>                        
+                    </div>
+                     <!--FIN CARROUSEL EVENTOS DE TECNOLOGIA-->
+                    
+                    <!--INICIA PUBLICACIONES-->
+                    <div class="row col-lg-12">
+
+                        <!-- INICIO FORMULARIO DE PUBLICACIONES -->
+                        <div class="card my-3 col-lg-12">
+
+                            <!--Inicia Cabezera del Formulario-->
+                            <div class="card-header pb-4">
+                                <ul class="nav nav-tabs card-header-tabs nav-fill">
+                                    <li class="nav-item">
+                                        <a id="titleRealizaPublicaciones" class="nav-link active" href="#">Muro de Publicaciones</a>
+                                    </li>                                    
+                                </ul>
+                            </div>
+                            <!--Fin Cabezera del Formulario-->
+
+                            <!--INICIA  TEXT AREA 1-->
+                            <textarea class="form-control border-0" id="Textarea1" rows="4"
+                                    placeholder="¿Que estas pensando?"></textarea> 
+                            <hr>
+                            <input type="file" id="fileFoto"/>                            
+                            <hr>
+                            <!--FIN TEXT AREA 1 -->
+
+                            <!--INICIO BOTONES DE ELECCION / Mas colores info, light, dark, link-->
+                            <div class="botons card-footer p-2">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <input type="button" name="Photos" id="btnPhotos" value="Postear" onclick="formPhotos(btnPhotos)" class="btn btn-primary"/>
+                                </div>
+                            </div>
+                            <!--FIN BOTONES DE ELECCION-->                            
+
+                        </div>
+                        <!-- FIN FORMULARIO DE PUBLICACIONES -->
+
+                        <!--INICIO IMPRESION Y MUESTRA DE PUBLICACIONES-->
+                        <div id="publicacionesPost" class="col-lg-12"></div> 
+                        <!--FIN IMPRESION Y MUESTRA DE PUBLICACIONES-->
+
+                    </div>
+                    <!--FIN PUBLICACIONES-->                    
+
+                </section>
+                <!--FIN COLUMNA 2-->
+
+                <!--INICIA COLUMNA 3-->
+                <section class="columna3 fixed-top col-3 offset-fixed f-right my-5 pt-4">
+
+                    <div class="card">
+                        <!-- www.tutiempo.net - Ancho:477px - Alto:91px -->
+                        <div id="TT_yyNE1kEk1nnaMFhK7fzDjjzDj6nK14SlbYkt1ciIqkzoG5GIm">El tiempo - Tutiempo.net</div>
+                        <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_yyNE1kEk1nnaMFhK7fzDjjzDj6nK14SlbYkt1ciIqkzoG5GIm"></script>  
+                    </div>  
+
+                    <div ><hr> </div>
+
+                    <div id="noticias"></div>              
+
+                </section>                
+                <!--FIN COLUMNA 3--> 
+
+            </div>
+            <!--FIN DEL PRIMER ROW-->
+
+        </div>
+        <!--FIN CONTAINER FLUID PRIMERO DEL MAIN--> 
+    </main>
+    <!--Fin del Main-->
+
+    <script src="../js/security.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/users.js"></script>
+    <script src="../js/friends.js"></script>
+    <script src="../js/pending.js"></script>
+    <script src="../js/news.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/colorEfects.js"></script>
+    <script src="../js/changeProfile.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/post.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/sweetalert2.all.min.js"></script>
+    <script src="../js/uiFunctions.js"></script>
+    <script src="../js/uiMessages.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

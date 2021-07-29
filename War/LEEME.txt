@@ -1,0 +1,2 @@
+Para que funcione correctamente, ademas de mover el .war a la carpeta webapps de tomcat, hay que mover las carpetas
+config, res a <directorio de tomcat>/bin y crear ahi mismo una carpeta log donde se van a guardar los errores
